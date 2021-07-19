@@ -39,7 +39,7 @@ while True:
         if x: match.append(x.group())
 
     # Number of columns that will be displayed
-    columns = 12
+    columns = 6
 
     # Rows are chosen so that:
     # (rows * columns) > len(match)
