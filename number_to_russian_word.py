@@ -1,5 +1,4 @@
 import re
-
 with open("russian.txt", "r") as f:
     words = list(map(lambda x: x[:-1], f.readlines()))
 
@@ -23,8 +22,11 @@ DLC = {
 # Separators
 sep = "[аеёийоуьыъэюя]*"
 
+BLUE = '\033[95m'
+ENDC = '\033[0m'
+
 while True:
-    print("Input number: ", end='')
+    print(BLUE + "Input number: " + ENDC, end='')
 
     number = list(map(lambda x: DLC[x], input()))
     regex = sep + f"{sep}".join(number) + sep
