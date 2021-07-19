@@ -47,8 +47,10 @@ while True:
     for i in range(columns):
         tmp_table.append(match[i * rows : (i + 1) * rows])
 
-    # Adding empty spaces for tmp_table to be matrix, to not get IndexError when dealing with the last row
-    tmp_table[columns - 1] += [''] * (len(tmp_table[0]) - len(tmp_table[columns - 1]))
+    # Adding empty spaces for tmp_table to be matrix, to not get IndexError when dealing with the last rows
+    for i in range(len(tmp_table)):
+        if len(tmp_table[i]) < rows:
+            tmp_table[i] += [''] * (rows - len(tmp_table[i]))
 
     # Tranposing matrix:
     # [ 1 2 ]     [ 1 3 5 ]
